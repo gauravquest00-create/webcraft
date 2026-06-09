@@ -1,0 +1,417 @@
+/* src/styles/FloatingActionButtons.css - Updated */
+
+.floating-actions-3d {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+/* ========================================
+   ALWAYS VISIBLE BUTTONS
+   ======================================== */
+.floating-wa-btn-3d,
+.floating-quote-btn-3d {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.floating-wa-btn-3d {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+}
+
+.floating-quote-btn-3d {
+  background: linear-gradient(135deg, #0A1929, #1E3A5F);
+  box-shadow: 0 10px 25px rgba(10, 25, 41, 0.3);
+}
+
+.floating-wa-btn-3d:hover,
+.floating-quote-btn-3d:hover {
+  transform: translateY(-5px) translateZ(10px) scale(1.02);
+}
+
+.wa-3d-icon,
+.quote-3d-icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.floating-wa-btn-3d:hover .wa-3d-icon,
+.floating-quote-btn-3d:hover .quote-3d-icon {
+  transform: scale(1.1);
+}
+
+.wa-3d-text,
+.quote-3d-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wa-pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 50px;
+  animation: waPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.quote-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.floating-quote-btn-3d:hover .quote-shine {
+  left: 100%;
+}
+
+@keyframes waPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   MAIN EXPANDABLE BUTTON
+   ======================================== */
+.floating-main-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.floating-main-btn-3d {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transform-style: preserve-3d;
+  perspective: 500px;
+  box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
+  z-index: 10;
+}
+
+.floating-main-btn-3d:hover {
+  transform: translateY(-5px) translateZ(10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 71, 87, 0.4);
+}
+
+.main-3d-icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.floating-main-btn-3d:hover .main-3d-icon {
+  transform: scale(1.1);
+}
+
+.main-3d-text {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.main-arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.floating-main-wrapper.expanded .main-arrow {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   OPTIONS PANEL - STEP 2
+   ======================================== */
+.floating-options-panel {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 280px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) rotateX(-15deg);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.floating-options-panel.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* Option Buttons */
+.options-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 8px;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 16px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.option-btn:hover {
+  background: rgba(255, 71, 87, 0.1);
+  transform: translateX(5px);
+}
+
+.option-icon {
+  font-size: 20px;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.option-arrow {
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover .option-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ========================================
+   ENQUIRY FORM PANEL - STEP 3
+   ======================================== */
+.enquiry-form-panel {
+  padding: 16px;
+}
+
+.enquiry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-3px);
+  color: #ff4757;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  transform: rotate(90deg);
+}
+
+.enquiry-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.enquiry-title h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.enquiry-title p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.enquiry-form-group {
+  margin-bottom: 12px;
+}
+
+.enquiry-form-group input,
+.enquiry-form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.enquiry-form-group input:focus,
+.enquiry-form-group textarea:focus {
+  outline: none;
+  border-color: #ff4757;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
+}
+
+.enquiry-status {
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.enquiry-status.success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid #10B981;
+  color: #10B981;
+}
+
+.enquiry-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #EF4444;
+  color: #EF4444;
+}
+
+.enquiry-submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enquiry-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+}
+
+.enquiry-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .floating-actions-3d {
+    bottom: 80px;
+    right: 15px;
+    gap: 10px;
+  }
+  
+  .floating-wa-btn-3d,
+  .floating-quote-btn-3d,
+  .floating-main-btn-3d {
+    padding: 10px 16px;
+  }
+  
+  .wa-3d-text,
+  .quote-3d-text,
+  .main-3d-text {
+    display: none;
+  }
+  
+  .floating-wa-btn-3d,
+  .floating-quote-btn-3d,
+  .floating-main-btn-3d {
+    border-radius: 50px;
+    padding: 12px;
+  }
+  
+  .floating-options-panel {
+    width: 300px;
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-actions-3d {
+    bottom: 70px;
+    right: 12px;
+  }
+  
+  .floating-options-panel {
+    width: 280px;
+  }
+}

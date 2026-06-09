@@ -1,0 +1,521 @@
+/* src/sections/Technologies.css - Premium 3D Animated Technologies Section */
+
+/* ========================================
+   PREMIUM TECHNOLOGIES SECTION
+   ======================================== */
+.premium-technologies {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated Background */
+.premium-tech-bg-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(var(--navy-rgb), 0.06) 0%, transparent 60%);
+  animation: rotateTechGlow 26s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateTechGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.premium-tech-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(var(--navy-rgb), 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--navy-rgb), 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  animation: techGridShift 20s linear infinite;
+}
+
+@keyframes techGridShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+.premium-tech-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.tech-particle-dot {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: techFloatParticle linear infinite;
+}
+
+@keyframes techFloatParticle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(-80px);
+    opacity: 0;
+  }
+}
+
+/* Container */
+.premium-tech-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.premium-tech-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.premium-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(var(--navy-rgb), 0.08);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.2rem;
+  border-radius: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  animation: fadeInDown 0.6s ease;
+}
+
+.premium-tech-badge .badge-icon {
+  font-size: 0.9rem;
+  animation: gearSpin 3s linear infinite;
+}
+
+@keyframes gearSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.premium-tech-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title-highlight {
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.title-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(var(--navy-rgb), 0.06), transparent);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.premium-tech-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Category Section */
+.premium-tech-category {
+  margin-bottom: 3rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  background: var(--bg-glass);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  animation: categoryFloat 3s ease-in-out infinite;
+}
+
+@keyframes categoryFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.category-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--border), transparent);
+  border-radius: 2px;
+}
+
+/* Premium Tech Grid */
+.premium-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+/* 3D Tech Card */
+.premium-tech-item {
+  opacity: 0;
+  transform: translateY(30px);
+  perspective: 1000px;
+}
+
+@keyframes premiumTechFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-3d-card {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.premium-tech-item:hover .tech-3d-card {
+  transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+}
+
+.tech-card-front,
+.tech-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.tech-card-front {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  z-index: 2;
+}
+
+.tech-card-back {
+  background: linear-gradient(135deg, var(--tech-color, var(--navy)), var(--tech-color, var(--navy-light)));
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.premium-tech-item:hover .tech-card-front {
+  transform: translateZ(20px);
+}
+
+/* Front Card Content */
+.tech-icon-wrapper {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.tech-icon {
+  font-size: 2.2rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.premium-tech-item:hover .tech-icon {
+  transform: scale(1.1);
+}
+
+.tech-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(var(--tech-color, var(--navy-rgb)), 0.2), transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.premium-tech-item:hover .tech-icon-glow {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.tech-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.tech-category {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Back Card Content */
+.tech-back-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.tech-back-icon {
+  font-size: 1.5rem;
+}
+
+.tech-back-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.tech-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.tech-progress-bar {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  animation: progressFill 1s ease-out;
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+/* Scroll Indicator */
+.premium-tech-scroll {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.premium-tech-scroll .scroll-line {
+  width: 60px;
+  height: 2px;
+  background: rgba(var(--navy-rgb), 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.premium-tech-scroll .scroll-progress {
+  width: 0%;
+  height: 100%;
+  background: var(--navy);
+  animation: techProgressScroll 2s ease-in-out infinite;
+}
+
+@keyframes techProgressScroll {
+  0% {
+    width: 0%;
+    transform: translateX(0);
+  }
+  50% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 0%;
+    transform: translateX(100%);
+  }
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+@media (max-width: 1024px) {
+  .premium-tech-title {
+    font-size: 2rem;
+  }
+  
+  .premium-tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tech-3d-card {
+    height: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-technologies {
+    padding: 4rem 0;
+  }
+  
+  .premium-tech-container {
+    padding: 0 1.5rem;
+  }
+  
+  .premium-tech-title {
+    font-size: 1.75rem;
+  }
+  
+  .premium-tech-subtitle {
+    font-size: 0.875rem;
+  }
+  
+  .premium-tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tech-3d-card {
+    height: 120px;
+  }
+  
+  .tech-icon {
+    font-size: 1.8rem;
+  }
+  
+  .tech-name {
+    font-size: 0.75rem;
+  }
+  
+  .tech-category {
+    font-size: 0.6rem;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-tech-container {
+    padding: 0 1rem;
+  }
+  
+  .premium-tech-title {
+    font-size: 1.5rem;
+  }
+  
+  .premium-tech-badge {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .premium-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+  
+  .tech-3d-card {
+    height: 110px;
+  }
+  
+  .tech-icon {
+    font-size: 1.5rem;
+  }
+  
+  .tech-name {
+    font-size: 0.7rem;
+  }
+  
+  .category-header {
+    margin-bottom: 1rem;
+  }
+  
+  .category-icon {
+    font-size: 1.2rem;
+  }
+  
+  .category-title {
+    font-size: 1rem;
+  }
+}

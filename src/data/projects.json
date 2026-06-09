@@ -1,0 +1,138 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "LuxuryNest Realty",
+      "slug": "luxurynest",
+      "category": "Real Estate",
+      "client": "LuxuryNest Realty Pvt Ltd",
+      "location": "Gurugram, Haryana",
+      "price": "₹50,000",
+      "year": "2024",
+      "duration": "12 days",
+      "liveUrl": "https://luxurynest.vercel.app",
+      "demoUrl": "https://luxurynest.vercel.app",
+      "description": "Premium real estate platform for luxury properties in Gurugram. Features property listings, virtual tours, and lead management system.",
+      "challenge": "Client needed a modern platform to showcase 100+ luxury properties with advanced search filters and RERA compliance.",
+      "solution": "Built a responsive React website with property filtering, contact forms, and integrated Google Maps for location tracking.",
+      "features": [
+        "Property listings with price filters",
+        "Virtual tour integration",
+        "RERA certified badge",
+        "Contact forms for enquiries",
+        "Google Maps location",
+        "Mobile responsive design",
+        "WhatsApp integration",
+        "SEO optimized"
+      ],
+      "technologies": ["React", "Tailwind CSS", "Vercel", "Google Maps API"],
+      "images": {
+        "home": "/luxurynest/home.png",
+        "about": "/luxurynest/about.png",
+        "property": "/luxurynest/property.png",
+        "launch": "/luxurynest/launch.png",
+        "construction": "/luxurynest/construction.png",
+        "constructionDetails": "/luxurynest/constructionDetails.png"
+      },
+      "testimonial": {
+        "name": "Abhishek Rastogi",
+        "role": "Director, LuxuryNest",
+        "text": "Webcraft delivered an outstanding website that helped us generate 50+ enquiries in the first month. Highly professional!"
+      },
+      "stats": {
+        "enquiries": "50+",
+        "properties": "100+",
+        "rating": "4.9"
+      },
+      "isLive": true
+    },
+    {
+      "id": 2,
+      "title": "Iron Paradise Gym",
+      "slug": "ironparadise",
+      "category": "Fitness / Gym",
+      "client": "Iron Paradise Fitness",
+      "location": "Gurugram, Haryana",
+      "price": "₹25,000 (Template)",
+      "year": "2024",
+      "duration": "5 days",
+      "liveUrl": "https://ironparadisgyms.vercel.app",
+      "demoUrl": "https://ironparadisgyms.vercel.app",
+      "description": "Modern gym website with membership plans, trainer profiles, and class schedules. Ready-to-use template for fitness centers.",
+      "challenge": "Gym needed an attractive website to showcase facilities, trainers, and membership plans to attract new members.",
+      "solution": "Created a dynamic gym website with membership pricing, trainer profiles, class schedules, and member testimonials.",
+      "features": [
+        "Membership plans with pricing",
+        "Trainer profiles with expertise",
+        "Class schedules",
+        "Member testimonials",
+        "Contact form",
+        "Location map",
+        "WhatsApp chat",
+        "Mobile responsive"
+      ],
+      "technologies": ["React", "CSS3", "Vercel", "EmailJS"],
+      "images": {
+        "home": "/ironparadise/home.png",
+        "contact": "/ironparadise/contact.png",
+        "plan": "/ironparadise/plan.png",
+        "program": "/ironparadise/program.png"
+      },
+      "testimonial": {
+        "name": "Mike Sharma",
+        "role": "Owner, Iron Paradise",
+        "text": "Ready-to-use template saved us time and money. Website looks professional and members love it!"
+      },
+      "stats": {
+        "members": "5000+",
+        "trainers": "50+",
+        "rating": "4.9"
+      },
+      "isLive": false
+    },
+    {
+      "id": 3,
+      "title": "Gaurav Associates",
+      "slug": "gauravassociates",
+      "category": "Real Estate",
+      "client": "Gaurav Associates",
+      "location": "Dwarka, Delhi",
+      "price": "₹40,000",
+      "year": "2024",
+      "duration": "8 days",
+      "liveUrl": "https://gauravassociates.vercel.app",
+      "demoUrl": "https://gauravassociates.vercel.app",
+      "description": "Budget-friendly real estate website for properties in Dwarka, Delhi. Clean design with property listings and enquiry forms.",
+      "challenge": "Client wanted an affordable yet professional website to showcase residential properties in Dwarka area.",
+      "solution": "Built a clean, fast-loading website with property listings, enquiry forms, and Google Maps integration.",
+      "features": [
+        "Property listings",
+        "Enquiry forms",
+        "RERA compliant badge",
+        "Contact information",
+        "Google Maps",
+        "Mobile responsive",
+        "Fast loading",
+        "SEO ready"
+      ],
+      "technologies": ["React", "CSS3", "Vercel"],
+      "images": {
+        "home": "/GA/home.png",
+        "about": "/GA/about.png",
+        "property": "/GA/property.png",
+        "contact": "/GA/contact.png"
+      },
+      "testimonial": {
+        "name": "Gaurav Verma",
+        "role": "Owner, Gaurav Associates",
+        "text": "Perfect budget solution for our real estate business. Website is clean and enquiries are coming in regularly."
+      },
+      "stats": {
+        "enquiries": "30+",
+        "properties": "50+",
+        "rating": "4.8"
+      },
+      "isLive": false
+    }
+  ]
+}

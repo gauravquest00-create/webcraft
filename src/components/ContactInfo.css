@@ -1,0 +1,355 @@
+/* src/components/ContactInfo.css - Premium 3D Contact Info */
+
+/* ========================================
+   PREMIUM CONTACT INFO GRID
+   ======================================== */
+.premium-contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Contact Card */
+.premium-contact-info-card {
+  position: relative;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+}
+
+@keyframes premiumContactFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.premium-contact-info-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--contact-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D Glow Effect */
+.card-3d-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, rgba(var(--contact-color), 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.premium-contact-info-card:hover .card-3d-glow {
+  opacity: 1;
+}
+
+/* Floating Particles */
+.card-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--contact-color);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 3s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  top: 60%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.particle:nth-child(3) {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+}
+
+.premium-contact-info-card:hover .particle {
+  opacity: 1;
+}
+
+/* Card Inner */
+.card-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Icon Wrapper */
+.info-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  perspective: 500px;
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.premium-contact-info-card:hover .info-icon {
+  transform: rotateY(15deg) scale(1.1);
+}
+
+.icon-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--contact-color), transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.premium-contact-info-card:hover .icon-glow-ring {
+  opacity: 0.3;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.icon-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: pulseRing 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--contact-color), 0.4);
+    opacity: 1;
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(var(--contact-color), 0);
+    opacity: 0;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--contact-color), 0);
+    opacity: 0;
+  }
+}
+
+/* Title */
+.contact-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.premium-contact-info-card:hover .contact-title {
+  color: var(--contact-color);
+}
+
+/* Contact Link */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--contact-color);
+  position: relative;
+  padding: 0.25rem 0;
+  transition: all 0.3s ease;
+}
+
+.link-text {
+  position: relative;
+  z-index: 2;
+}
+
+.link-arrow {
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateX(-5px);
+}
+
+.contact-link:hover .link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.link-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--contact-color);
+  transition: width 0.3s ease;
+}
+
+.contact-link:hover .link-glow {
+  width: 100%;
+}
+
+/* Contact Detail (non-link) */
+.contact-detail {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--contact-color);
+  margin-bottom: 0.25rem;
+}
+
+/* Subtext */
+.contact-subtext {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Decorative Line */
+.card-decorative-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(var(--contact-color), 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.line-progress {
+  width: 0%;
+  height: 100%;
+  background: var(--contact-color);
+  transition: width 0.4s ease;
+}
+
+.premium-contact-info-card:hover .line-progress {
+  width: 100%;
+}
+
+/* Hover Border */
+.card-hover-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.premium-contact-info-card:hover .card-hover-border {
+  border-color: var(--contact-color);
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .premium-contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-contact-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .premium-contact-info-card {
+    padding: 1.2rem;
+  }
+  
+  .info-icon {
+    font-size: 2rem;
+  }
+  
+  .contact-title {
+    font-size: 1rem;
+  }
+  
+  .contact-link,
+  .contact-detail {
+    font-size: 0.8rem;
+  }
+  
+  .contact-subtext {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .premium-contact-info-card {
+    padding: 1rem;
+  }
+  
+  .info-icon {
+    font-size: 1.8rem;
+  }
+  
+  .particle {
+    display: none;
+  }
+}
