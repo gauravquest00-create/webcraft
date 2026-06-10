@@ -56,7 +56,7 @@ export default function Hero({ onNavigate }) {
   // Split text into animated letters
   const titleText = "Professional Website in"
   const highlightText = "5 Days"
-  const freeText = "or FREE"
+  const freeText = "or FREE DOMAIN"
 
   return (
     <section className="premium-hero" ref={heroRef}>
@@ -80,7 +80,7 @@ export default function Hero({ onNavigate }) {
           {/* Trust Badge */}
           <div className="premium-trust-badge">
             <span className="badge-icon">⭐</span>
-            <span className="badge-text">Trusted by 500+ Businesses</span>
+            <span className="badge-text">Trusted by Businesses</span>
             <span className="badge-pulse"></span>
           </div>
 
