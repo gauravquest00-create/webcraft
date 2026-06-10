@@ -2,10 +2,10 @@
   "projects": [
     {
       "id": 1,
-      "title": "LuxuryNest Realty",
+      "title": "LuxuryNest ",
       "slug": "luxurynest",
       "category": "Real Estate",
-      "client": "LuxuryNest Realty Pvt Ltd",
+      "client": "LuxuryNest  Pvt Ltd",
       "location": "Gurugram, Haryana",
       "price": "₹50,000",
       "year": "2024",
@@ -79,8 +79,8 @@
         "program": "/ironparadise/program.png"
       },
       "testimonial": {
-        "name": "Mike Sharma",
-        "role": "Owner, Iron Paradise",
+        "name": "Webvraft",
+        "role": "Developer, Iron Paradise",
         "text": "Ready-to-use template saved us time and money. Website looks professional and members love it!"
       },
       "stats": {
@@ -123,8 +123,8 @@
         "contact": "/GA/contact.png"
       },
       "testimonial": {
-        "name": "Gaurav Verma",
-        "role": "Owner, Gaurav Associates",
+        "name": "webcraft",
+        "role": "Developer, gauravassociates",
         "text": "Perfect budget solution for our real estate business. Website is clean and enquiries are coming in regularly."
       },
       "stats": {
