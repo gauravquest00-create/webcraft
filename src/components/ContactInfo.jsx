@@ -5,8 +5,8 @@ import './ContactInfo.css'
 export default function ContactInfo() {
   const contactInfo = [
     { icon: '📧', title: 'Email Us', details: 'heywebcraft@gmail.com', link: 'mailto:hello@webcraft.dev', color: '#3B82F6', subtext: 'We reply within 24h' },
-    { icon: '📞', title: 'Call Us', details: '+91 8130839987', link: 'tel:+919876543210', color: '#10B981', subtext: 'Mon-Fri, 9AM-6PM' },
-    { icon: '💬', title: 'WhatsApp', details: '+91 8130839987', link: 'https://wa.me/919876543210', color: '#25D366', subtext: 'Quick replies' },
+    { icon: '📞', title: 'WA Call Us', details: '+91 8130839987', link: 'tel:+919876543210', color: '#10B981', subtext: 'Mon-Sun, 9AM-8PM' },
+    { icon: '💬', title: 'WhatsApp', details: '+91 8130839987', link: 'https://wa.me/918130839987', color: '#25D366', subtext: 'Quick replies' },
     { icon: '🕒', title: 'Response Time', details: 'Within 24 hours', link: null, color: '#F59E0B', subtext: 'Average 12 hours' }
   ]
 
