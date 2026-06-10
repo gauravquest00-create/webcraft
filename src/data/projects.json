@@ -9,7 +9,7 @@
       "location": "Gurugram, Haryana",
       "price": "₹50,000",
       "year": "2024",
-      "duration": "12 days",
+      "duration": "7 days",
       "liveUrl": "https://luxurynest.vercel.app",
       "demoUrl": "https://luxurynest.vercel.app",
       "description": "Premium real estate platform for luxury properties in Gurugram. Features property listings, virtual tours, and lead management system.",
@@ -55,7 +55,7 @@
       "location": "Gurugram, Haryana",
       "price": "₹25,000 (Template)",
       "year": "2024",
-      "duration": "5 days",
+      "duration": "8 days",
       "liveUrl": "https://ironparadisgyms.vercel.app",
       "demoUrl": "https://ironparadisgyms.vercel.app",
       "description": "Modern gym website with membership plans, trainer profiles, and class schedules. Ready-to-use template for fitness centers.",
@@ -79,7 +79,7 @@
         "program": "/ironparadise/program.png"
       },
       "testimonial": {
-        "name": "Webvraft",
+        "name": "Webcraft",
         "role": "Developer, Iron Paradise",
         "text": "Ready-to-use template saved us time and money. Website looks professional and members love it!"
       },
