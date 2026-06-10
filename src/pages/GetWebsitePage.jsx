@@ -74,21 +74,21 @@ export default function GetWebsitePage() {
 
   const goBack = () => navigate(-1)
 
-  const projectTypes = [
-    { value: 'business', label: 'Business Website', price: '₹25,000 - ₹40,000', icon: '🏢', color: '#3B82F6' },
-    { value: 'portfolio', label: 'Portfolio Website', price: '₹15,000 - ₹25,000', icon: '🎨', color: '#10B981' },
-    { value: 'landing', label: 'Landing Page', price: '₹8,000 - ₹15,000', icon: '📈', color: '#F59E0B' },
-    { value: 'realestate', label: 'Real Estate Website', price: '₹40,000 - ₹60,000', icon: '🏠', color: '#EF4444' },
-    { value: 'ecommerce', label: 'E-commerce Website', price: '₹35,000 - ₹55,000', icon: '🛒', color: '#8B5CF6' },
-    { value: 'custom', label: 'Custom Solution', price: 'Custom Quote', icon: '💎', color: '#EC4899' }
-  ]
+const projectTypes = [
+  { value: 'business', label: 'Business Website', price: '₹15,000 - ₹25,000', icon: '🏢', color: '#3B82F6' },
+  { value: 'portfolio', label: 'Portfolio Website', price: '₹10,000 - ₹18,000', icon: '🎨', color: '#10B981' },
+  { value: 'landing', label: 'Landing Page', price: '₹5,000 - ₹10,000', icon: '📈', color: '#F59E0B' },
+  { value: 'realestate', label: 'Real Estate Website', price: '₹25,000 - ₹45,000', icon: '🏠', color: '#EF4444' },
+  { value: 'ecommerce', label: 'E-commerce Website', price: '₹30,000 - ₹50,000', icon: '🛒', color: '#8B5CF6' },
+  { value: 'custom', label: 'Custom Solution', price: 'Custom Quote', icon: '💎', color: '#EC4899' }
+]
 
-  const budgetRanges = [
-    { value: 'under-25k', label: 'Under ₹25,000' },
-    { value: '25k-50k', label: '₹25,000 - ₹50,000' },
-    { value: '50k-1lakh', label: '₹50,000 - ₹1,00,000' },
-    { value: 'above-1lakh', label: 'Above ₹1,00,000' }
-  ]
+const budgetRanges = [
+  { value: 'under-15k', label: 'Under ₹15,000' },
+  { value: '15k-30k', label: '₹15,000 - ₹30,000' },
+  { value: '30k-50k', label: '₹30,000 - ₹50,000' },
+  { value: 'above-50k', label: 'Above ₹50,000' }
+]
 
   return (
     <div className="gw-page-wrapper">
