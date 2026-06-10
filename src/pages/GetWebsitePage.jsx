@@ -218,9 +218,9 @@ export default function GetWebsitePage() {
                   </div>
                   <div className="gw-guarantee-items-3d">
                     {[
-                      { icon: '🏆', text: '5 Days or FREE', color: '#F59E0B' },
+                      { icon: '🏆', text: 'Projet Delivered As Agreed', color: '#F59E0B' },
                       { icon: '💰', text: '100% Money Back', color: '#10B981' },
-                      { icon: '🔒', text: 'Free Lifetime Updates', color: '#3B82F6' },
+                      { icon: '🔒', text: '30 Days Free Support', color: '#3B82F6' },
                       { icon: '📞', text: '24/7 Support', color: '#EF4444' }
                     ].map((item, idx) => (
                       <div key={idx} className="gw-guarantee-item-3d" style={{ '--item-color': item.color }}>
