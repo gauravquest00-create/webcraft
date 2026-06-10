@@ -20,8 +20,8 @@ export default function About() {
   }
 
   const stats = [
-    { value: '50+', label: 'Projects Delivered', icon: '🚀', delay: '0s', color: '#6366F1' },
-    { value: '45+', label: 'Happy Clients', icon: '😊', delay: '0.1s', color: '#10B981' },
+    { value: '3+', label: 'Projects Delivered', icon: '🚀', delay: '0s', color: '#6366F1' },
+    { value: '1+', label: 'Happy Clients', icon: '😊', delay: '0.1s', color: '#10B981' },
     { value: '100%', label: 'Client Satisfaction', icon: '⭐', delay: '0.2s', color: '#F59E0B' },
     { value: '24/7', label: 'Support Available', icon: '💬', delay: '0.3s', color: '#EF4444' }
   ]
