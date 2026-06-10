@@ -146,7 +146,7 @@ export default function Hero({ onNavigate }) {
                 <div className="stars-glow"></div>
               </div>
               <span className="rating">4.9/5</span>
-              <span className="review-count">from 150+ reviews</span>
+              <span className="review-count">from 1 reviews</span>
             </div>
             <div className="trust-indicators">
               <div className="trust-item">
