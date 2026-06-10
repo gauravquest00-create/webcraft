@@ -54,8 +54,8 @@ export default function Hero({ onNavigate }) {
   }
 
   // Split text into animated letters
-  const titleText = "Professional Website in"
-  const highlightText = "5 Days"
+  const titleText = "Turn Visitor Into Customers With a "
+  const highlightText = "Professional Website"
   const freeText = "or FREE DOMAIN"
 
   return (
@@ -111,8 +111,7 @@ export default function Hero({ onNavigate }) {
           
           {/* Subheading */}
           <p className="premium-hero-subtitle" ref={subtitleRef}>
-            Get a stunning, mobile-friendly website that generates leads and grows your business. 
-            No coding skills needed. Starting at just ₹25,000.
+            Your business needs a website that works 24/7. Get more leads starting at ₹25,000.
           </p>
 
           {/* Offer Banner */}
