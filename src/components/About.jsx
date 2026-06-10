@@ -59,7 +59,7 @@ export default function About() {
                   <div className="floating-icon-glow"></div>
                 </div>
                 <div className="floating-text">
-                  <strong>3+ Years</strong>
+                  <strong>1 Years</strong>
                   <span>Of Excellence</span>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function About() {
                   <div className="floating-icon-glow"></div>
                 </div>
                 <div className="floating-text">
-                  <strong>50+</strong>
+                  <strong>3+</strong>
                   <span>Projects Done</span>
                 </div>
               </div>
