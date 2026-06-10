@@ -186,7 +186,7 @@ const socialLinks = [
               <li>
                 <a href="mailto:hello@webcraft.dev" className="premium-contact-link">
                   <span className="contact-icon">📧</span>
-                  <span>hello@webcraft.in</span>
+                  <span>heywebcraft@gmail.com</span>
                   <div className="contact-hover"></div>
                 </a>
               </li>
