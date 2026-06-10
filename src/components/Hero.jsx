@@ -54,8 +54,8 @@ export default function Hero({ onNavigate }) {
   }
 
   // Split text into animated letters
-  const titleText = "Turn Visitor Into Customers With a "
-  const highlightText = "Professional Website"
+  const titleText = "Get More Leads. More Calls. More Sales."
+  const highlightText = "In 5Days"
   const freeText = "or FREE DOMAIN"
 
   return (
