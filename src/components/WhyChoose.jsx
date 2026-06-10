@@ -20,50 +20,50 @@ export default function WhyChoose() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const features = [
-    {
-      title: 'Professional Design',
-      description: 'Clean, modern aesthetics that reflect your brand identity and build trust.',
-      icon: '🎨',
-      delay: '0s',
-      color: '#6366F1'
-    },
-    {
-      title: 'Mobile Responsive',
-      description: 'Flawless experience on every device, from desktop to smartphone.',
-      icon: '📱',
-      delay: '0.1s',
-      color: '#10B981'
-    },
-    {
-      title: 'Fast Loading',
-      description: 'Optimized performance for instant page loads and better SEO.',
-      icon: '⚡',
-      delay: '0.2s',
-      color: '#F59E0B'
-    },
-    {
-      title: 'SEO Ready',
-      description: 'Built with search engines in mind to help you get found online.',
-      icon: '🔍',
-      delay: '0.3s',
-      color: '#EF4444'
-    },
-    {
-      title: 'Easy Management',
-      description: 'Simple dashboard to update content without technical knowledge.',
-      icon: '⚙️',
-      delay: '0.4s',
-      color: '#8B5CF6'
-    },
-    {
-      title: 'Reliable Support',
-      description: 'Dedicated assistance whenever you need help or updates.',
-      icon: '💬',
-      delay: '0.5s',
-      color: '#EC4899'
-    }
-  ]
+const features = [
+  {
+    title: 'More Client Calls',
+    description: 'Websites optimized for phone calls and contact form submissions.',
+    icon: '📞',
+    delay: '0s',
+    color: '#6366F1'
+  },
+  {
+    title: 'Lead Generation',
+    description: 'Built-in forms and CTAs that convert visitors into paying customers.',
+    icon: '📈',
+    delay: '0.1s',
+    color: '#10B981'
+  },
+  {
+    title: 'SEO Ready',
+    description: 'Rank higher on Google and get found by customers searching for you.',
+    icon: '🔍',
+    delay: '0.2s',
+    color: '#F59E0B'
+  },
+  {
+    title: 'Fast Loading',
+    description: '5-second load time = more customers. Speed matters for sales.',
+    icon: '⚡',
+    delay: '0.3s',
+    color: '#EF4444'
+  },
+  {
+    title: '24/7 Presence',
+    description: 'Your business works even while you sleep. Never miss a lead.',
+    icon: '🕒',
+    delay: '0.4s',
+    color: '#8B5CF6'
+  },
+  {
+    title: 'Better ROI',
+    description: 'Get more business for every rupee spent. Websites that pay for themselves.',
+    icon: '💰',
+    delay: '0.5s',
+    color: '#EC4899'
+  }
+]
 
   return (
     <section className="premium-why-choose" id="services" ref={sectionRef}>
