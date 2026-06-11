@@ -1,0 +1,230 @@
+{
+  "services": [
+    {
+      "id": "business_website",
+      "title": "Business Website",
+      "category": "Website Development",
+      "description": "Professional websites for shops, agencies, clinics, consultants, and service providers to build online presence and generate leads.",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": 9999,
+          "best_for": "Small businesses testing online presence",
+          "features": [
+            "1–4 Pages Website",
+            "Basic Template Design",
+            "Mobile Responsive Layout",
+            "Contact Form",
+            "WhatsApp Button",
+            "Basic SEO Setup"
+          ],
+          "delivery_time": "3–5 days"
+        },
+        {
+          "name": "Standard",
+          "price": 12999,
+          "best_for": "Businesses focused on lead generation",
+          "features": [
+            "5–8 Pages Website",
+            "Improved Custom Layout",
+            "Mobile Responsive Design",
+            "WhatsApp Integration",
+            "Google Maps Integration",
+            "Service/Product Sections",
+            "Basic Speed Optimization"
+          ],
+          "delivery_time": "5–7 days"
+        },
+        {
+          "name": "Premium",
+          "price": 14999,
+          "best_for": "Established businesses needing strong branding",
+          "features": [
+            "Advanced UI/UX Design",
+            "Conversion-focused Layout",
+            "Multiple CTA Sections",
+            "Lead Capture System",
+            "Gallery / Portfolio Section",
+            "Basic Analytics Setup",
+            "Priority Support"
+          ],
+          "delivery_time": "7–10 days"
+        }
+      ]
+    },
+    {
+      "id": "real_estate_website",
+      "title": "Real Estate Website",
+      "category": "Niche Website Development",
+      "description": "Websites designed for brokers, builders, and property consultants to showcase properties and generate leads.",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": 12999,
+          "features": [
+            "Basic Property Listing Page",
+            "Contact Form",
+            "WhatsApp Integration",
+            "Mobile Responsive Design",
+            "Basic SEO Setup"
+          ],
+          "delivery_time": "4–6 days"
+        },
+        {
+          "name": "Standard",
+          "price": 18999,
+          "features": [
+            "Property Listing System",
+            "Project Showcase Pages",
+            "Lead Capture Forms",
+            "WhatsApp CTA Buttons",
+            "Image Gallery",
+            "Google Maps Integration"
+          ],
+          "delivery_time": "6–8 days"
+        },
+        {
+          "name": "Premium",
+          "price": 24999,
+          "features": [
+            "Advanced Property Management System",
+            "Multiple Project Pages",
+            "Lead Tracking Setup",
+            "Floor Plan & Gallery Sections",
+            "WhatsApp Multi-CTA System",
+            "Performance Optimization"
+          ],
+          "delivery_time": "7–12 days"
+        }
+      ]
+    },
+    {
+      "id": "landing_page",
+      "title": "Landing Page",
+      "category": "Conversion Website",
+      "description": "High-converting single-page websites for ads, campaigns, and lead generation.",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 3999,
+          "features": [
+            "Single Page Design",
+            "WhatsApp Button",
+            "Contact Form",
+            "Mobile Responsive",
+            "Fast Loading"
+          ],
+          "delivery_time": "2–3 days"
+        },
+        {
+          "name": "Advanced",
+          "price": 6999,
+          "features": [
+            "High Conversion Layout",
+            "Lead Capture Form",
+            "Call + WhatsApp CTA",
+            "Better UI Design",
+            "Basic SEO Optimization"
+          ],
+          "delivery_time": "3–5 days"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_website",
+      "title": "Portfolio Website",
+      "category": "Personal Branding",
+      "description": "Personal websites for freelancers, developers, designers, and professionals to showcase work.",
+      "plans": [
+        {
+          "name": "Basic",
+          "price": 5999,
+          "features": [
+            "Personal Profile Section",
+            "Project Showcase",
+            "Contact Form",
+            "Mobile Responsive Design"
+          ],
+          "delivery_time": "3–5 days"
+        },
+        {
+          "name": "Pro",
+          "price": 9999,
+          "features": [
+            "Advanced Portfolio Layout",
+            "Resume Section",
+            "Project Filtering",
+            "Better UI Design",
+            "SEO Optimization"
+          ],
+          "delivery_time": "5–7 days"
+        }
+      ]
+    },
+    {
+      "id": "ecommerce_website",
+      "title": "E-commerce Website",
+      "category": "Online Store Development",
+      "description": "Full-featured online store websites for selling products online.",
+      "plans": [
+        {
+          "name": "Basic Store",
+          "price": 18999,
+          "features": [
+            "Product Catalog",
+            "Cart System",
+            "Basic Checkout",
+            "Mobile Responsive Design",
+            "Admin Panel (Basic)"
+          ],
+          "delivery_time": "7–10 days"
+        },
+        {
+          "name": "Advanced Store",
+          "price": 34999,
+          "features": [
+            "Advanced Product Management",
+            "Payment Gateway Integration",
+            "Order Management System",
+            "User Accounts",
+            "Advanced UI Design"
+          ],
+          "delivery_time": "10–15 days"
+        }
+      ]
+    },
+    {
+      "id": "custom_solution",
+      "title": "Custom Solution",
+      "category": "SaaS / Software Development",
+      "description": "Custom-built systems like CRM, dashboards, SaaS MVPs, and automation tools.",
+      "plans": [
+        {
+          "name": "Starter MVP",
+          "price": 29999,
+          "features": [
+            "Basic Dashboard",
+            "User Authentication",
+            "Simple CRUD System",
+            "API Integration (Basic)",
+            "Responsive UI"
+          ],
+          "delivery_time": "10–15 days"
+        },
+        {
+          "name": "Advanced System",
+          "price": 59999,
+          "features": [
+            "Full CRM System",
+            "Role-Based Access",
+            "Advanced Dashboard",
+            "API Integrations",
+            "Scalable Backend Architecture",
+            "Analytics System"
+          ],
+          "delivery_time": "15–30 days"
+        }
+      ]
+    }
+  ]
+}
