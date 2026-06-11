@@ -165,7 +165,7 @@ export default function Hero({ onNavigate }) {
             <span>100% Money Back Guarantee</span>
             <span className="separator">|</span>
             <span className="guarantee-icon">⚡</span>
-            <span>Free Lifetime Updates</span>
+            <span>30 Days Free Updates</span>
             <span className="separator">|</span>
             <span className="guarantee-icon">💎</span>
             <span>Premium Support</span>
