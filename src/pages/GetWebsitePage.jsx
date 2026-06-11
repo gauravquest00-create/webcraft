@@ -75,19 +75,19 @@ export default function GetWebsitePage() {
   const goBack = () => navigate(-1)
 
 const projectTypes = [
-  { value: 'business', label: 'Business Website', price: '₹15,000 - ₹25,000', icon: '🏢', color: '#3B82F6' },
-  { value: 'portfolio', label: 'Portfolio Website', price: '₹10,000 - ₹18,000', icon: '🎨', color: '#10B981' },
-  { value: 'landing', label: 'Landing Page', price: '₹5,000 - ₹10,000', icon: '📈', color: '#F59E0B' },
-  { value: 'realestate', label: 'Real Estate Website', price: '₹25,000 - ₹45,000', icon: '🏠', color: '#EF4444' },
-  { value: 'ecommerce', label: 'E-commerce Website', price: '₹30,000 - ₹50,000', icon: '🛒', color: '#8B5CF6' },
+  { value: 'business', label: 'Business Website', price: '₹9,999 - ₹14,999', icon: '🏢', color: '#3B82F6' },
+  { value: 'portfolio', label: 'Portfolio Website', price: '₹5,999 - ₹9,999', icon: '🎨', color: '#10B981' },
+  { value: 'landing', label: 'Landing Page', price: '₹3,999 - ₹6,999', icon: '📈', color: '#F59E0B' },
+  { value: 'realestate', label: 'Real Estate Website', price: '₹12,999 - ₹24,999', icon: '🏠', color: '#EF4444' },
+  { value: 'ecommerce', label: 'E-commerce Website', price: '₹18,999 - ₹34,999', icon: '🛒', color: '#8B5CF6' },
   { value: 'custom', label: 'Custom Solution', price: 'Custom Quote', icon: '💎', color: '#EC4899' }
 ]
 
 const budgetRanges = [
-  { value: 'under-15k', label: 'Under ₹15,000' },
-  { value: '15k-30k', label: '₹15,000 - ₹30,000' },
-  { value: '30k-50k', label: '₹30,000 - ₹50,000' },
-  { value: 'above-50k', label: 'Above ₹50,000' }
+  { value: 'under-6k', label: 'Under ₹5,999' },
+  { value: '10k-15k', label: '₹10,000 - ₹15,000' },
+  { value: '15k-20k', label: '₹15,000 - ₹20,000' },
+  { value: 'above-20k', label: 'Above ₹20,000' }
 ]
 
   return (
