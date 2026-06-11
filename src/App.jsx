@@ -11,6 +11,7 @@ import ThankYouPage from './pages/ThankYouPage'
 import TermsPage from './pages/TermsPage'
 import PrivacyPage from './pages/PrivacyPage'
 import ProjectsPage from './pages/ProjectsPage'
+import ServicesPage from './pages/ServicesPage' 
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 <Route path="/terms" element={<TermsPage />} />
 <Route path="/privacy" element={<PrivacyPage />} />
 <Route path="/project" element={<ProjectsPage />} />
+<Route path="/services" element={<ServicesPage  />} />
 
       </Routes>
       <Footer />
