@@ -44,8 +44,15 @@ export default function ContactForm() {
       setSubmitStatus({ type: 'error', message: '❌ Please enter your name' })
       return false
     }
-    if (!formData.email.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
+    // Stricter email validation
+    const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
       setSubmitStatus({ type: 'error', message: '❌ Please enter a valid email address' })
+      return false
+    }
+    // Phone validation (if entered, must be valid Indian number)
+    if (formData.phone && !/^[6-9]\d{9}$/.test(formData.phone)) {
+      setSubmitStatus({ type: 'error', message: '❌ Enter valid 10-digit mobile number (starts with 6-9)' })
       return false
     }
     if (!formData.message.trim()) {
@@ -61,15 +68,33 @@ export default function ContactForm() {
     if (!validateForm()) return
 
     setIsSubmitting(true)
+
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // Store enquiry data
+      // Send to Google Sheet
+      const response = await fetch(API_CONFIG.GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || 'Not provided',
+          subject: formData.subject || 'General',
+          message: formData.message.trim(),
+          source: 'contact-form',
+          timestamp: new Date().toISOString()
+        })
+      })
+
+      // Store enquiry data for thank you page
       sessionStorage.setItem('enquiryData', JSON.stringify({
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
         subject: formData.subject,
+        message: formData.message,
         timestamp: new Date().toLocaleString()
       }))
       
@@ -80,6 +105,7 @@ export default function ContactForm() {
       }, 1500)
       
     } catch (error) {
+      console.error('Submission error:', error)
       setSubmitStatus({ type: 'error', message: '❌ Something went wrong. Please try again.' })
       setIsSubmitting(false)
     }
@@ -169,6 +195,7 @@ export default function ContactForm() {
             <label className={focusedField === 'phone' || formData.phone ? 'focused' : ''}>
               <span className="label-icon">📞</span>
               <span>Phone Number</span>
+              <span className="optional">(Optional)</span>
             </label>
             <div className="input-wrapper">
               <input 
@@ -183,12 +210,14 @@ export default function ContactForm() {
               <div className="input-glow"></div>
               <div className="input-border"></div>
             </div>
+            <small>10-digit mobile number</small>
           </div>
           
           <div className="premium-form-group">
             <label className={focusedField === 'subject' || formData.subject ? 'focused' : ''}>
               <span className="label-icon">📋</span>
               <span>Subject</span>
+              <span className="optional">(Optional)</span>
             </label>
             <div className="input-wrapper select-wrapper">
               <select name="subject" value={formData.subject} onChange={handleChange}>
