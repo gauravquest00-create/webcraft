@@ -78,6 +78,7 @@ const socialLinks = [
 
   const quickLinks = [
     { name: 'Home', path: '/', icon: '🏠' },
+    { name: 'Services', path: '/services', icon: '💻' } ,
     { name: 'About', path: '/about', icon: '👤' },
     { name: 'Contact', path: '/contact', icon: '📞' },
     { name: 'Get a Website', path: '/get-website', icon: '🚀' }
