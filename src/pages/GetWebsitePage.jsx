@@ -1,8 +1,10 @@
 // src/pages/GetWebsitePage.jsx
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import API_CONFIG from '../config/api'
 import './GetWebsitePage.css'
-import { Link } from 'react-router-dom'  // Add this if not already there
+
 export default function GetWebsitePage() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -35,23 +37,37 @@ export default function GetWebsitePage() {
   }
 
   const validateForm = () => {
+    // Name validation
     if (!formData.name.trim()) {
       setSubmitStatus({ type: 'error', message: '❌ Please enter your name' })
       return false
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    // Email validation (strict)
+    const emailRegex = /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/
     if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
-      setSubmitStatus({ type: 'error', message: '❌ Please enter a valid email address' })
+      setSubmitStatus({ type: 'error', message: '❌ Please enter a valid email address (e.g., name@domain.com)' })
       return false
     }
+
+    // Phone validation (if entered, must be valid Indian number)
+    if (formData.phone && !/^[6-9]\d{9}$/.test(formData.phone)) {
+      setSubmitStatus({ type: 'error', message: '❌ Enter valid 10-digit mobile number (starts with 6-9)' })
+      return false
+    }
+
+    // Project type validation
     if (!formData.projectType) {
       setSubmitStatus({ type: 'error', message: '❌ Please select a project type' })
       return false
     }
+
+    // Message validation
     if (!formData.message.trim() || formData.message.trim().length < 10) {
       setSubmitStatus({ type: 'error', message: '❌ Please provide project details (minimum 10 characters)' })
       return false
     }
+
     return true
   }
 
@@ -60,35 +76,70 @@ export default function GetWebsitePage() {
     if (!validateForm()) return
 
     setIsSubmitting(true)
-    setTimeout(() => {
+
+    try {
+      // Send to Google Sheet
+      const response = await fetch(API_CONFIG.GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || 'Not provided',
+          projectType: formData.projectType,
+          budget: formData.budget || 'Not specified',
+          message: formData.message.trim(),
+          source: 'get-website-page',
+          timestamp: new Date().toISOString()
+        })
+      })
+
+      // Store in sessionStorage for thank you page
       sessionStorage.setItem('enquiryData', JSON.stringify({
         name: formData.name.trim(),
         email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        budget: formData.budget,
         subject: `Website Project: ${formData.projectType}`,
+        message: formData.message,
         timestamp: new Date().toLocaleString()
       }))
+
       setSubmitStatus({ type: 'success', message: '✓ Request sent! Redirecting...' })
-      setTimeout(() => navigate('/thank-you'), 1500)
-    }, 1000)
+      
+      setTimeout(() => {
+        navigate('/thank-you')
+      }, 1500)
+
+    } catch (error) {
+      console.error('Submission error:', error)
+      setSubmitStatus({ type: 'error', message: '❌ Something went wrong. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
-  const goBack = () => navigate(-1)
+  const projectTypes = [
+    { value: 'business', label: 'Business Website', price: '₹9,999 - ₹14,999', icon: '🏢', color: '#3B82F6' },
+    { value: 'portfolio', label: 'Portfolio Website', price: '₹5,999 - ₹9,999', icon: '🎨', color: '#10B981' },
+    { value: 'landing', label: 'Landing Page', price: '₹3,999 - ₹6,999', icon: '📈', color: '#F59E0B' },
+    { value: 'realestate', label: 'Real Estate Website', price: '₹12,999 - ₹24,999', icon: '🏠', color: '#EF4444' },
+    { value: 'ecommerce', label: 'E-commerce Website', price: '₹18,999 - ₹34,999', icon: '🛒', color: '#8B5CF6' },
+    { value: 'custom', label: 'Custom Solution', price: 'Custom Quote', icon: '💎', color: '#EC4899' }
+  ]
 
-const projectTypes = [
-  { value: 'business', label: 'Business Website', price: '₹9,999 - ₹14,999', icon: '🏢', color: '#3B82F6' },
-  { value: 'portfolio', label: 'Portfolio Website', price: '₹5,999 - ₹9,999', icon: '🎨', color: '#10B981' },
-  { value: 'landing', label: 'Landing Page', price: '₹3,999 - ₹6,999', icon: '📈', color: '#F59E0B' },
-  { value: 'realestate', label: 'Real Estate Website', price: '₹12,999 - ₹24,999', icon: '🏠', color: '#EF4444' },
-  { value: 'ecommerce', label: 'E-commerce Website', price: '₹18,999 - ₹34,999', icon: '🛒', color: '#8B5CF6' },
-  { value: 'custom', label: 'Custom Solution', price: 'Custom Quote', icon: '💎', color: '#EC4899' }
-]
-
-const budgetRanges = [
-  { value: 'under-6k', label: 'Under ₹5,999' },
-  { value: '10k-15k', label: '₹10,000 - ₹15,000' },
-  { value: '15k-20k', label: '₹15,000 - ₹20,000' },
-  { value: 'above-20k', label: 'Above ₹20,000' }
-]
+  // Updated budget ranges to match pricing
+  const budgetRanges = [
+    { value: 'under-5k', label: 'Under ₹5,000' },
+    { value: '5k-10k', label: '₹5,000 - ₹10,000' },
+    { value: '10k-15k', label: '₹10,000 - ₹15,000' },
+    { value: '15k-25k', label: '₹15,000 - ₹25,000' },
+    { value: '25k-50k', label: '₹25,000 - ₹50,000' },
+    { value: 'above-50k', label: 'Above ₹50,000' }
+  ]
 
   return (
     <div className="gw-page-wrapper">
@@ -111,13 +162,13 @@ const budgetRanges = [
 
       <div className="gw-container">
         {/* 3D Back Button */}
-       <Link to="/" className="gw-back-btn-3d">
-  <div className="gw-back-3d-wrapper">
-    <span className="gw-back-icon">←</span>
-    <span className="gw-back-text">Back to Home</span>
-    <div className="gw-back-glow"></div>
-  </div>
-</Link>
+        <Link to="/" className="gw-back-btn-3d">
+          <div className="gw-back-3d-wrapper">
+            <span className="gw-back-icon">←</span>
+            <span className="gw-back-text">Back to Home</span>
+            <div className="gw-back-glow"></div>
+          </div>
+        </Link>
 
         {/* Animated Header */}
         <div className="gw-header">
@@ -127,7 +178,7 @@ const budgetRanges = [
             <div className="gw-badge-pulse"></div>
           </div>
           <h1 className="gw-title">
-            Turn Visitor Into Customers <span className="gw-title-highlight"> With a Professional Website</span>
+            Turn Visitors Into Customers <span className="gw-title-highlight">With a Professional Website</span>
             <div className="gw-title-glow"></div>
           </h1>
           <p className="gw-subtitle">
@@ -218,7 +269,7 @@ const budgetRanges = [
                   </div>
                   <div className="gw-guarantee-items-3d">
                     {[
-                      { icon: '🏆', text: 'Projet Delivered As Agreed', color: '#F59E0B' },
+                      { icon: '🏆', text: 'Project Delivered As Agreed', color: '#F59E0B' },
                       { icon: '💰', text: '100% Money Back', color: '#10B981' },
                       { icon: '🔒', text: '30 Days Free Support', color: '#3B82F6' },
                       { icon: '📞', text: '24/7 Support', color: '#EF4444' }
@@ -307,7 +358,7 @@ const budgetRanges = [
 
                 <div className="gw-form-row-3d">
                   <div className="gw-form-group-3d">
-                    <label>Phone</label>
+                    <label>Phone <span className="gw-optional">(Optional)</span></label>
                     <div className="gw-input-3d-wrapper">
                       <input 
                         type="tel" 
@@ -319,6 +370,7 @@ const budgetRanges = [
                       <div className="gw-input-glow"></div>
                       <div className="gw-input-border"></div>
                     </div>
+                    <small>10-digit mobile number</small>
                   </div>
                   <div className="gw-form-group-3d">
                     <label>Project Type <span className="gw-required">*</span></label>
